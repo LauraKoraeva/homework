@@ -3,6 +3,7 @@
 */
 
 //Переменные и типы. Целочисленный тип
+
 #include <iostream>
 
 int main()
@@ -21,6 +22,16 @@ int main()
 
   return 0;
 }
+
+
+
+
+
+
+
+
+
+
 
 //Вывод значений переменных
 #include <iostream>
@@ -54,6 +65,15 @@ std::cout << "Действия плохой погоды\n";
 std::cout << "Ветер: -" << wind << '\n';
 std::cout << "Дождь: -" << rain << '\n';
 }
+
+
+
+
+
+
+
+
+
 
 //Практическая работа
 
@@ -95,7 +115,17 @@ std::cout << "Дождь: -" << rain << '\n';
 return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 2. Калькулятор стоимости товара
+
 #include <iostream>
 
 int main()
@@ -118,7 +148,18 @@ std::cout << "\nTotal price: $" << totalPrice << '\n';
 return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
 //Задание 3. Время, время!
+
 #include <iostream>
 
 int main()
@@ -145,7 +186,17 @@ int main()
 return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 4. Непонятная квитанция
+
 #include <iostream>
 
 int main()

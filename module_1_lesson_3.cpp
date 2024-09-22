@@ -19,6 +19,15 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 2
 #include <iostream>
 
@@ -42,8 +51,20 @@ std::cout << "\nTotal price: $" << totalPrice << '\n';
 return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
 //Строковый тип данных
+
 //Задание 1
+
 #include <iostream>
 #include <string>
 
@@ -81,8 +102,20 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
 //Практическая работа
+
 //Задача 1. Симулятор маршрутки
+
 #include <iostream>
 #include <string>
 
@@ -152,7 +185,17 @@ int main()
 
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 2. Обмен местами
+
 #include <iostream>
 
 int main()
@@ -171,7 +214,17 @@ int main()
   return 0; 
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 3. Злостные вредители
+
 #include <iostream>
 
 int main()

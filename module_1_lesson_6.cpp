@@ -2,7 +2,10 @@
   Урок 6. Введение в циклы: while, do while, break
 */
 
+
+
 //Циклы while, do while
+
 //Задача 1. Начальник.
 #include <iostream>
 #include <string>
@@ -18,6 +21,18 @@ int main()
 
   return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Задача 2. Купи слона.
 
@@ -40,6 +55,19 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Задача 3. Таблица степеней.
 #include <iostream>
@@ -68,6 +96,17 @@ int main()
     return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 //Задача 4. Напоминалка.
 #include <iostream>
 #include <string>
@@ -92,6 +131,18 @@ int main()
     return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 //Задача 5. Банкомат 3.0.
 #include <iostream>
 
@@ -110,6 +161,18 @@ int main()
     std::cout << "Ввод корректный.\n";
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Задача 6. Сумма чисел.
 #include <iostream>
@@ -134,7 +197,19 @@ int main()
     return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 //Применение цикла while. Инструкция break
+
 //Задача 1. Банкомат 4.0.
 #include <iostream>
 
@@ -168,6 +243,38 @@ int main()
 
 
 
+
+//Задача 2. Кадастровые проблемы.
+#include <iostream>
+
+int main()
+{
+    std::cout << "Введите площадь участка: ";
+    int square;
+    std::cin >> square;
+
+    int count = 1;
+    while (count * count < square)
+        ++count;
+    
+    if (count * count == square)
+        std::cout << "Площадь является точным квадратом.\n";
+    else
+        std::cout << "Площадь не является точным квадратом.\n";
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 //Задача 3. Кожаный мешок.
 #include <iostream>
 
@@ -176,22 +283,15 @@ int main()
     std::cout << "Введите число: ";
     int number;
     std::cin >> number;
-    
-    int count = 0;
-    while (number != 0)
+
+    bool found = false;
+    while (number != 0 && !found)
     {
-        int digit = number % 10;
-        
-        if (digit != 0 && digit != 1)
-        {
-            ++count;
-            break;
-        }
-        
+        found = number % 10 > 1;
         number /= 10;
     }
 
-    if (count > 0)
+    if (found)
         std::cout << "Число состоит не только из 0 и 1.\n";
     else
         std::cout << "Число состоит только из 0 и 1.\n";
@@ -205,7 +305,42 @@ int main()
 
 
 
+
+
+
+//Задача 4. Военное время.
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Введите число: ";
+    int number;
+    std::cin >> number;
+
+    int result = 0;
+    while (number != 0)
+    {
+        result = result * 10 + number % 10;
+        number /= 10;
+    }
+    std::cout << result << '\n';
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 //Практическая работа
+
 //Задание 1. Кукушка
 #include <iostream>
 
@@ -232,7 +367,14 @@ int main()
 }
 
 
-//Практическая работа
+
+
+
+
+
+
+
+
 //Задание 2. Слишком большие числа
 #include <iostream>
 
@@ -257,7 +399,14 @@ int main()
     return 0;
 }
 
-//Практическая работа
+
+
+
+
+
+
+
+
 //Задание 3. Коллекторы
 #include <iostream>
 #include <string>
@@ -296,7 +445,13 @@ int main()
     return 0;
 }
 
-//Практическая работа
+
+
+
+
+
+
+
 //Задание 4. Счастливый билетик
 #include <iostream>
 
@@ -341,5 +496,84 @@ int main()
     else
         std::cout << "Повезёт в следующий раз!!\n";
     }
+    return 0;
+}
+
+
+
+
+
+
+//Задание 5. Числа Фибоначчи
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Введите номер числа из последовательности Фибоначчи: ";
+    int number;
+    std::cin >> number;
+
+    int number_1 = 1;
+    int number_2 = 1;
+    int currentNumber = 0;
+
+    if (number <= 0 || number > 46)
+        std::cout << "Число не может быть отрицательным, или равным нулю, или больше 46.";
+    else if (number == 1 || number == 2)
+    {
+        std::cout << number_1;
+    }
+
+    else
+    {
+        int count = 3;
+        while (count <= number)
+        {
+            currentNumber = number_1 + number_2;
+
+            number_1 = number_2;
+            number_2 = currentNumber;
+            ++count;
+        }
+        std::cout << currentNumber << '\n';
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+//Задание 6. Вклады
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Введите размер вклада: ";
+    int deposit;
+    std::cin >> deposit;
+
+    std::cout << "Введите процентную ставку: ";
+    int rate;
+    std::cin >> rate;
+
+    std::cout << "Введите желаемую сумму: ";
+    int desiredAmount;
+    std::cin >> desiredAmount;
+
+    int yearsCount = 0;
+
+    while (deposit < desiredAmount)
+    {
+        deposit = deposit + ((rate * deposit) / 100);
+        ++yearsCount;
+    }
+
+    std::cout << "Придётся подождать: " << yearsCount << " лет\n";
+
     return 0;
 }

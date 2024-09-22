@@ -3,6 +3,7 @@
 */
 
 //Задача 1. Калькулятор скидки
+
 #include <iostream>
 
 int main()
@@ -36,7 +37,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задача 2. Автомобиль.
+
 #include <iostream>
 
 int main()
@@ -63,7 +74,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задача 3. Модуль числа.
+
 #include <iostream>
 
 int main()
@@ -81,7 +102,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задача 4. Барберы
+
 #include <iostream>
 
 int main()
@@ -122,8 +153,19 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Практическая работа
+
 //Задание 1. Минимум из двух чисел
+
 #include <iostream>
 
 int main()
@@ -153,7 +195,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 2. Складываем в уме
+
 #include <iostream>
 
 int main()
@@ -182,7 +234,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 3. Проверка на чётное число
+
 #include <iostream>
 
 int main()
@@ -205,7 +267,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 4. Калькулятор опыта
+
 #include <iostream>
 #include <cassert>
 
@@ -238,7 +310,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 5. Кратность числа
+
 #include <iostream>
 #include <cassert>
 
@@ -266,7 +348,18 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
 //Задание 6. Улучшим Барберов
+
 #include <iostream>
 
 int main()
@@ -307,7 +400,17 @@ int main()
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
 //Задание 7. Меню ресторана
+
 #include <iostream>
 #include <string>
 
