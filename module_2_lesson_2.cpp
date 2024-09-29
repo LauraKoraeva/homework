@@ -581,6 +581,79 @@ int main()
 
 //Задача 3
 
+#include <iostream>
+#include <vector>
 
+std::vector<int> add(std::vector<int> vec, int head, int number)
+{
+	vec[head] = number;
+	return vec;
+}
+
+int main()
+{
+	int size = 5;
+	std::vector<int> vec(size);
+
+	int head = 0;
+	int tail = 0;
+	bool isOverwritten = false;
+
+	int number = 0;
+	while (true)
+	{
+		std::cout << "Input number: ";
+		std::cin >> number;
+		
+		if (number != -1)
+		{
+			vec = add(vec, head, number);
+			if (head == size - 1)
+			{
+				head = (head + 1) % size;
+				if (head > 0)
+					isOverwritten = true;
+			}
+			else
+				++head;
+		}
+		else if (number == -1)
+		{
+			tail = head;
+
+			if (tail != 0)
+			{
+				if (isOverwritten)
+				{
+					for (int index = tail; index < size; ++index)
+					{
+						std::cout << vec[index] << " ";
+					}
+				}
+
+				for (int index = 0; index <= size - 1; ++index)
+					{
+						std::cout << vec[index] << " ";
+					}
+
+				std::cout << '\n';
+			}
+
+			else if (tail == 0)
+			{
+				for (int index = 0; index < size; ++index)
+				{
+					std::cout << vec[index] << " ";
+				}
+				std::cout << '\n';
+			}
+
+		}
+
+	}
+
+	return 0;
+
+}
 
 
