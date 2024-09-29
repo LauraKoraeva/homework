@@ -4,7 +4,7 @@
 
 //Задание 2. Крестики-нолики
 
-#include <iostream>
+#include <iostream> //НЕТ ПРОВЕРКИ ПОБЕДИТЕЛЯ
 
 int main()
 {
