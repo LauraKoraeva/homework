@@ -226,4 +226,48 @@ int main()
 
 
 
+//Практическая работа
+
+//Задание 1. Космический симулятор
+
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+	float mass;
+	do
+	{
+		std::cout << "Input mass: ";
+		std::cin >> mass;
+		if (mass <= 0)
+			std::cout << "Mass cannot be equal to zero or less than zero.\n";
+	} while (mass <= 0);
+
+	std::cout << "Input force: ";
+	float force;
+	std::cin >> force;
+
+	std::cout << "Input time: ";
+	float time;
+	std::cin >> time;
+
+	float acceleration = force / mass;
+
+	float distance = (acceleration * std::pow(time, 2.0)) / 2;
+
+	std::cout << "In " << time << " seconds, the spacecraft will cover a distance of " << distance << " km.";
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
 
