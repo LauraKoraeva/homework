@@ -270,4 +270,170 @@ int main()
 
 
 
+//Задание 2. Immolate Improved!
+
+#include <iostream>
+
+int main()
+{
+	float health = 1;
+	
+	float resistance;
+	do
+	{
+		std::cout << "Enter orc's resistance power: ";
+		std::cin >> resistance;
+
+		if (resistance < 0 || resistance > 1)
+			std::cout << "Error!\n";
+
+	} while (resistance < 0 || resistance > 1);
+
+	while (health > 0)
+	{
+		float impactPower;
+		do
+		{
+			std::cout << "Enter fireball's impact power: ";
+			std::cin >> impactPower;
+
+			if (impactPower < 0 || impactPower > 1)
+				std::cout << "Error!\n";
+		} while (impactPower < 0 || impactPower > 1);
+
+		float damage = impactPower - (impactPower * resistance);
+		health -= damage;
+
+		std::cout << "Health damage: " << damage << '\n';
+		std::cout << "Life left: " << health << '\n';
+	}
+
+	std::cout << "Orc is dead!\n";
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+//Задание 4. Убийца Steam
+
+#include <iostream>
+
+int main()
+{
+	float fileSize;
+	do
+	{
+		std::cout << "Enter file size: ";
+		std::cin >> fileSize;
+
+		if (fileSize <= 0)
+			std::cout << "Error!\n";
+	} while (fileSize <= 0);
+	
+	float downloadSpeed;
+	do
+	{
+		std::cout << "Enter downloading speed: ";
+		std::cin >> downloadSpeed;
+
+		if (downloadSpeed <= 0)
+			std::cout << "Error!\n";
+	} while (downloadSpeed <= 0);
+
+	int secondsCount = 0;
+	float downloaded = 0;
+	float fileLeft = fileSize;
+	int percent = 0;
+
+	while (fileLeft > 0)
+	{
+		if (fileLeft < downloadSpeed)
+		{
+			downloaded += fileLeft;
+			fileLeft -= fileLeft;
+			++secondsCount;
+			percent = (100 / fileSize) * downloaded;
+		}
+		else
+		{
+			downloaded += downloadSpeed;
+			fileLeft -= downloadSpeed;
+			++secondsCount;
+			percent = (100 / fileSize) * downloaded;
+		}
+
+		std::cout << "Time passed: " << secondsCount << " sec. Downloaded: " << downloaded << " MB out of " << fileSize << " (" << percent << "%).\n";
+	}
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+//Задание 5. Кенийский бегун
+
+#include <iostream>
+
+int main()
+{
+	int kilometresCount;
+	do
+	{
+		std::cout << "How many kilometres did you run today? ";
+		std::cin >> kilometresCount;
+
+		if (kilometresCount <= 0)
+			std::cout << "Error!\n";
+	} while (kilometresCount <= 0);
+
+	float total = 0;
+
+	int index = 1;
+	while (index <= kilometresCount)
+	{
+		float pace;
+		do
+		{
+			std::cout << "Enter your pace at kilometre " << index << ": ";
+			std::cin >> pace;
+
+			if (pace <= 0)
+				std::cout << "Error!\n";
+		} while (pace <= 0);
+
+		total += pace;
+		index++;
+	}
+	
+	int minutes = total / kilometresCount / 60;
+	int seconds = (int) std::round(total / kilometresCount) % 60;
+
+	std::cout << "Your average pace: " << minutes << " minutes " << seconds << " sec.\n";
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
 
