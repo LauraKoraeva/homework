@@ -270,5 +270,8 @@ int main()
 	else
 		std::cout << "Viewers won!\n";
 
+	questionsList.close();
+	answersList.close();
+
 	return 0;
 }
