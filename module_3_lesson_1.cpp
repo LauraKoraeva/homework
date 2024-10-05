@@ -176,3 +176,99 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+//Задание 5. Реализация игры «Что? Где? Когда?»
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+int main()
+{
+	std::ifstream questionsList;
+	std::ifstream answersList;
+	questionsList.open("C:\\Users\\Acer\\Desktop\\textbook\\ConsoleApplication1\\ConsoleApplication1\\questions.txt");
+	answersList.open("C:\\Users\\Acer\\Desktop\\textbook\\ConsoleApplication1\\ConsoleApplication1\\answers.txt");
+
+	std::vector<std::string> question;
+	while (!questionsList.eof())
+	{
+		std::string line;
+		std::getline(questionsList, line);
+		question.push_back(line);
+	}
+
+	std::vector<std::string> answer;
+	while (!answersList.eof())
+	{
+		std::string word;
+		std::getline(answersList, word);
+		answer.push_back(word);
+	}
+
+	bool sectors[13];
+	for (int i = 0; i < 13; ++i)
+		sectors[i] = true;
+
+	std::cout << "Welcome to the game \"What? Where? When?\"!\n";
+	int currentSector = 1;
+
+	int playerScore = 0;
+	int viewersScore = 0;
+	int gameProgress = 0;
+	while (playerScore != 6 && viewersScore != 6 && gameProgress != 13)
+	{
+		std::cout << "Enter the offset: ";
+		int offset;
+		std::cin >> offset;
+
+		if (currentSector + offset <= 13)
+			currentSector += offset;
+		else
+			currentSector = (currentSector + offset) % 13;
+
+		while (!sectors[currentSector - 1])
+		{
+			if (currentSector == 13)
+				currentSector = 1;
+			++currentSector;
+		}
+
+		std::cout << "Question: " << question[currentSector - 1] << '\n';
+		std::cout << "Enter your answer: ";
+		std::string playerAnswer;
+		std::cin >> playerAnswer;
+
+		if (playerAnswer == answer[currentSector - 1])
+		{
+			playerScore += 1;
+			std::cout << "correct answer";
+		}
+		else
+		{
+			viewersScore += 1;
+			std::cout << "incorrect answer\n";
+			std::cout << viewersScore << '\n';
+		}
+
+		sectors[currentSector - 1] = false;
+		++gameProgress;
+	}
+
+	if (playerScore > viewersScore)
+		std::cout << "Player won!\n";
+	else
+		std::cout << "Viewers won!\n";
+
+	return 0;
+}
