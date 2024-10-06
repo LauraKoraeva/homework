@@ -38,9 +38,9 @@ int main()
 
 int main()
 {
-std::string game = "Супер гонки";
+std::string game = "Super Race";
 int lap = 4;
-std::string driver = "Шумахер";
+std::string driver = "Schumacher";
 int engine = 254;
 int wheels = 93;
 int steeringWheel = 49;
@@ -49,21 +49,21 @@ int rain = 17;
 int speed = 358;
 
 std::cout << "-------------------------\n";
-std::cout << game << ". Круг " << lap << "\n";
+std::cout << game << ". Lap " << lap << "\n";
 std::cout << "-------------------------\n";
 std::cout << driver << " (" << speed << ")" << '\n';
 std::cout << "-------------------------\n";
-std::cout << "Водитель: " << driver << '\n';
-std::cout << "Скорость: " << speed << '\n';
+std::cout << "Driver: " << driver << '\n';
+std::cout << "Speed: " << speed << '\n';
 std::cout << "---------------\n";
-std::cout << "Оснащение\n";
-std::cout << "Двигатель: +" << engine << '\n';
-std::cout << "Колеса: +" << wheels << '\n';
-std::cout << "Руль: +" << steeringWheel << '\n';
+std::cout << "Equipment\n";
+std::cout << "Engine: +" << engine << '\n';
+std::cout << "Wheels: +" << wheels << '\n';
+std::cout << "Steering wheel: +" << steeringWheel << '\n';
 std::cout << "---------------\n";
-std::cout << "Действия плохой погоды\n";
-std::cout << "Ветер: -" << wind << '\n';
-std::cout << "Дождь: -" << rain << '\n';
+std::cout << "Bad weather conditions\n";
+std::cout << "Wind: -" << wind << '\n';
+std::cout << "Rain: -" << rain << '\n';
 }
 
 
@@ -82,9 +82,9 @@ std::cout << "Дождь: -" << rain << '\n';
 
 int main()
 {
-std::string game = "Супер гонки";
+std::string game = "Super Race";
 int lap = 4;
-std::string driver = "Шумахер";
+std::string driver = "Schumacher";
 
 int engine = 254;
 int wheels = 93;
@@ -96,21 +96,21 @@ int rain = 17;
 int speed = engine + wheels + steeringWheel - wind - rain;
 
 std::cout << "-------------------------\n";
-std::cout << game << ". Круг " << lap << "\n";
+std::cout << game << ". Lap " << lap << "\n";
 std::cout << "-------------------------\n";
 std::cout << driver << " (" << speed << ")" << '\n';
 std::cout << "-------------------------\n";
-std::cout << "Водитель: " << driver << '\n';
-std::cout << "Скорость: " << speed << '\n';
+std::cout << "Driver: " << driver << '\n';
+std::cout << "Speed: " << speed << '\n';
 std::cout << "---------------\n";
-std::cout << "Оснащение\n";
-std::cout << "Двигатель: +" << engine << '\n';
-std::cout << "Колеса: +" << wheels << '\n';
-std::cout << "Руль: +" << steeringWheel << '\n';
+std::cout << "Equipment\n";
+std::cout << "Engine: +" << engine << '\n';
+std::cout << "Wheels: +" << wheels << '\n';
+std::cout << "Steering wheel: +" << steeringWheel << '\n';
 std::cout << "---------------\n";
-std::cout << "Действия плохой погоды\n";
-std::cout << "Ветер: -" << wind << '\n';
-std::cout << "Дождь: -" << rain << '\n';
+std::cout << "Bad weather conditions\n";
+std::cout << "Wind: -" << wind << '\n';
+std::cout << "Rain: -" << rain << '\n';
 
 return 0;
 }
