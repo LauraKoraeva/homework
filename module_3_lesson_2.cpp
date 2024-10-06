@@ -307,7 +307,25 @@ int main()
 
 
 
+void list()
+ {
 
+
+    while(!recipients.eof())
+     {
+        recipients >> person.name >> person.surname >> person.date >> person.cash;
+        if (person.name.empty()) 
+        {
+            break;
+        } 
+        else 
+        {
+            std::cout << person.name << " " << person.surname << " "  << person.date << " " << person.cash
+                 << " " << std::endl;
+            person.name = "";
+        }
+    }
+}
 
 
 
