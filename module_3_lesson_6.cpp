@@ -76,3 +76,120 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+//Задание 2. Реализация программы напоминания о днях рождения
+
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+#include <vector>
+
+struct BirthdayInfo
+{
+	std::string name;
+	std::string surname;
+	std::tm birthday;
+};
+
+
+int main()
+{
+	std::vector<BirthdayInfo> birthdays;
+	while (true)
+	{
+		BirthdayInfo person;
+		std::cout << "Enter the name: ";
+		std::cin >> person.name;
+		if (person.name == "end")
+			break;
+		std::cout << "Enter the surname: ";
+		std::cin >> person.surname;
+		std::cout << "Enter the birthday [YYYY / MM / DD]: ";
+		std::time_t t = std::time(nullptr);
+		std::tm local = *std::localtime(&t);
+		person.birthday = local;
+		std::cin >> std::get_time(&person.birthday, "%Y/%m/%d");
+		birthdays.push_back(person);
+	}
+
+	std::time_t t = std::time(nullptr);
+	std::tm* today = std::localtime(&t);
+
+	int minIndex = 0;
+	int minDays = 366;
+
+	for (int i = 0; i < birthdays.size(); ++i)
+	{
+		if (birthdays[i].birthday.tm_mon >= today->tm_mon)
+		{
+			birthdays[i].birthday.tm_year = today->tm_year;
+			std::time_t b = std::mktime(&birthdays[i].birthday);
+			std::time_t t = std::mktime(today);
+
+			double diff = std::difftime(b, t) / (60 * 60 * 24);
+			if (birthdays[i].birthday.tm_mon == today->tm_mon && birthdays[i].birthday.tm_mday == today->tm_mday)
+				std::cout << "Today is " << birthdays[i].name << " " << birthdays[i].surname << "'s birthday.\n";
+			else if (diff < minDays && (birthdays[i].birthday.tm_mon != today->tm_mon || birthdays[i].birthday.tm_mday != today->tm_mday))
+			{
+				minDays = diff;
+				minIndex = i;
+			}
+		}
+	}
+	std::cout << birthdays[minIndex].name << " " << birthdays[minIndex].surname << "\'s birthday is on " <<
+		std::put_time(&birthdays[minIndex].birthday, "%m/%d") << " .Don't forget to buy a present.\n";
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+//Задание 3. Реализация программы таймера
+
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+
+int main()
+{
+    std::cout << "Set the timer [MM:SS]: ";
+   
+    std::tm timer;
+    std::cin >> std::get_time(&timer, "%M:%S");
+   
+    std::time_t currentTime = std::time(nullptr);
+    std::time_t targetTime = currentTime + timer.tm_min * 60 + timer.tm_sec;
+
+    while (currentTime != targetTime)
+    {
+        std::time_t diff = targetTime - currentTime;
+        currentTime = std::time(nullptr);
+        if (currentTime + diff != targetTime)
+        {
+            int newDiff = targetTime - currentTime;
+            int minutes = newDiff / 60;
+            int seconds = newDiff % 60;
+            std::cout << minutes << ":" << seconds / 10 << seconds % 10 << '\n';
+        }
+    }
+
+    std::cout << "DING! DING! DING!\n";
+   
+    return 0;
+}
