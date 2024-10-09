@@ -81,6 +81,40 @@ int main()
 
 //Логические операторы и сложные условия
 
+//Задача 1.
+
+#include <iostream>
+#include <cassert>
+
+int main()
+{
+  std::cout << "Узнайте уровень персонажа в игре!\n";
+  int playerLevel = 1;
+  int experiencePoints;
+  std::cout << "Введите число очков опыта: ";
+  std::cin >> experiencePoints;
+  std::cout << "-----Считаем-----\n";
+  assert(experiencePoints >= 0);
+  if (experiencePoints < 1000)
+  {
+  }
+  else if (experiencePoints >= 1000 && experiencePoints < 2500)
+  {
+    playerLevel = 2;
+  }
+  else if (experiencePoints >= 2500 && experiencePoints < 5000)
+  {
+    playerLevel = 3;
+  }
+  else if (experiencePoints >= 5000)
+  {
+    playerLevel = 4;
+  }
+  std::cout << "Ваш уровень: " << playerLevel << '\n';
+
+  return 0;
+}
+
 
 
 
@@ -397,6 +431,83 @@ int main()
   }
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+//Задание 5. Усложнение задачи про кирпич
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Find out whether the first box fits into the second one.\n";
+    std::cout << "Enter length, width and height of the first box:\n";
+    int l_1, w_1, h_1;
+    std::cin >> l_1 >> w_1 >> h_1;
+
+    std::cout << "Enter length, width and height of the second box:\n";
+    int l_2, w_2, h_2;
+    std::cin >> l_2 >> w_2 >> h_2;
+
+    if (l_1 <= l_2 && l_1 <= w_2 && l_1 <= h_2 && w_1 <= l_2 && w_1 <= w_2 &&
+        w_1 <= h_2 && h_1 <= l_2 && h_1 <= w_2 && h_1 <= h_2)
+        std::cout << "The first box fits into the second box.\n";
+    else
+        std::cout << "The first box does not fit into the second box.\n";
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+//Задание 6. Грустное совершеннолетие
+
+#include <iostream>
+
+int main()
+{
+    int day;
+    int month;
+    int year;
+    std::cout << "Enter today's date [dd mm yyyy]:\n";
+    std::cin >> day;
+    std::cin >> month;
+    std::cin >> year;
+   
+    int birthDay;
+    int birthMonth;
+    int birthYear;
+    std::cout << "Enter customer's birthday [dd mm yyyy]:\n";
+    std::cin >> birthDay;
+    std::cin >> birthMonth;
+    std::cin >> birthYear;
+   
+    int age = year - birthYear;
+   
+    if ((age > 18) || (age == 18 && month > birthMonth) || (age == 18 && month == birthMonth && day > birthDay))
+        std::cout << "You can sell beer to this customer.\n";
+    else
+        std::cout << "You can't sell beer to this customer.\n";
+       
+    return 0;
+}
+
+
+
 
 
 

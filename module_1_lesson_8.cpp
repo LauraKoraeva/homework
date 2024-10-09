@@ -322,6 +322,56 @@ int main()
 
 
 
+//Задание 3. Игрушечная история
+
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    std::cout << "Find out how many sets of cubes you can make.\n";
+    std::cout << "Enter bar's length, width and height:\n";
+   
+    double length;
+    std::cout << "Length: ";
+    std::cin >> length;
+   
+    double width;
+    std::cout << "Width: ";
+    std::cin >> width;
+   
+    double height;
+    std::cout << "Height: ";
+    std::cin >> height;
+   
+    if (length < 5 || width < 5 || height < 5)
+    {
+std::cout << "The bar is too small to make a single cube.";
+}
+else
+{
+    int x = length / 5;
+    int y = width / 5;
+    int z = height / 5;
+   
+    int cubesCount = x * y * z;
+    int setsCount = std::pow((int)std::pow(cubesCount, 1.0 / 3), 3);
+   
+    std::cout << "You can make " << setsCount << " sets out of " << cubesCount << " cubes.\n";
+}
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
 //Задание 4. Убийца Steam
 
 #include <iostream>
@@ -428,6 +478,47 @@ int main()
 	return 0;
 }
 
+
+
+
+
+
+
+
+
+
+//Задание 6. Маятник
+
+#include <iostream>
+
+int main()
+{
+    float initialAmplitude;
+    float finalAmplitude;
+   
+    do
+    {
+        std::cout << "Enter the initial amplitude: ";
+        std::cin >> initialAmplitude;
+        std::cout << "Enter the final amplitude: ";
+        std::cin >> finalAmplitude;
+       
+        if (initialAmplitude < 0 || finalAmplitude < 0 || finalAmplitude > initialAmplitude)
+            std::cout << "Error! Try again:\n";
+    } while (initialAmplitude < 0 || finalAmplitude < 0 || finalAmplitude > initialAmplitude);
+   
+    int count = 0;
+    while (initialAmplitude > finalAmplitude)
+    {
+        initialAmplitude *= 1 - 0.084f;
+        ++count;
+    }
+   
+    std::cout << "The pendulum will reach the final amplitude after " << count << " oscillations.\n";
+   
+    return 0;
+       
+}
 
 
 
