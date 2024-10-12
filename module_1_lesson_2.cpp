@@ -164,24 +164,24 @@ return 0;
 
 int main()
 {
-  std::cout << "Эта программа рассчитывает, сколько клиентов успеет обслужить кассир за смену.\n";
+  std::cout << "This program calculates how many customers the cashier will have time to serve per shift.\n";
   
-  std::cout << "Введите длительность смены в минутах: ";
+  std::cout << "Enter the shift duration in minutes: ";
   int shiftDuration;
   std::cin >> shiftDuration;
 
-  std::cout << "Сколько минут клиент делает заказ? ";
+  std::cout << "How many minutes does the customer make an order? ";
   int orderDuration;
   std::cin >> orderDuration;
   
-  std::cout << "Сколько минут кассир собирает заказ? ";
+  std::cout << "How many minutes does it take the cashier to collect the order? ";
   int executionDuration;
   std::cin >> executionDuration;
 
   int serviceDuration = orderDuration + executionDuration;
   int customersCount = shiftDuration / serviceDuration;
-
-  std::cout << "За смену длиной " << shiftDuration << " минут кассир успеет обслужить " << customersCount << " клиентов.\n";
+  
+  std::cout << "During a " << shiftDuration << "-minute shift the chashier will have time to serve " << customersCount << " clients.\n";
 
 return 0;
 }
@@ -201,23 +201,23 @@ return 0;
 
 int main()
 {
-  std::cout << "Приветствуем вас в калькуляторе квартплаты!\n";
-  std::cout << "Введите сумму, указанную в квитанции: ";
+  std::cout << "Welcome to the property management calculator!\n";
+  std::cout << "Enter the amount indicated on the receipt: ";
   int totalSum;
   std::cin >> totalSum;
 
-  std::cout << "Сколько подъездов в вашем доме? ";
+  std::cout << "How many entrances are there in your block of flats? ";
   int blocksCount;
   std::cin >> blocksCount;
   
-  std::cout << "Сколько квартир в каждом подъезде ? ";
+  std::cout << "How many apartments are there in each entrance? ";
   int flatsPerBlock;
   std::cin >> flatsPerBlock;
 
   int flatsCount = blocksCount * flatsPerBlock;
   int sumPerFlat = totalSum / flatsCount;
 
-  std::cout << "Каждая квартира должна заплатить по " << sumPerFlat << " руб.\n";
+  std::cout << "Each apartment has to pay " << sumPerFlat << " rub.\n";
   
   return 0;
 }

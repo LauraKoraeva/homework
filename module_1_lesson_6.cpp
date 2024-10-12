@@ -113,11 +113,11 @@ int main()
 
 int main()
 {
-    std::cout << "Введите текст напоминания: ";
+    std::cout << "Enter reminder text: ";
     std::string reminderText;
     std::getline(std::cin, reminderText);
 
-    std::cout << "Введите количество напоминаний: ";
+    std::cout << "Enter the number of reminders: ";
     int reminderCount;
     std::cin >> reminderCount;
 
@@ -148,17 +148,17 @@ int main()
 
 int main()
 {
-    std::cout << "Введите четыре числа: \n";
+    std::cout << "Enter four numbers: \n";
     int number1, number2, number3, number4;
     std::cin >> number1 >> number2 >> number3 >> number4;
 
     while (number1 + number2 + number3 + number4 != 42)
     {
-        std::cout << "Ввод некорректный, попробуйте еще раз.\n";
+        std::cout << "The input is incorrect, please try again.\n";
         std::cin >> number1 >> number2 >> number3 >> number4;
     }
 
-    std::cout << "Ввод корректный.\n";
+    std::cout << "The input is correct.\n";
     return 0;
 }
 
@@ -179,20 +179,20 @@ int main()
 
 int main()
 {
-    std::cout << "Сколько чисел вы хотите сложить: ";
+    std::cout << "How many numbers do you want to add up: ";
     int numbersCount;
     std::cin >> numbersCount;
     int inputCounts = 1;
     int sum = 0;
     while (inputCounts <= numbersCount)
     {
-        std::cout << "Введите число " << inputCounts << ": ";
+        std::cout << "Enter number " << inputCounts << ": ";
         int number;
         std::cin >> number;
         sum += number;
         ++inputCounts;
     }
-    std::cout << "Сумма введенных чисел: " << sum << '\n';
+    std::cout << "The sum of the entered numbers: " << sum << '\n';
 
     return 0;
 }
@@ -215,7 +215,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите пин-код: ";
+    std::cout << "Enter the PIN code: ";
     int pinCode;
     std::cin >> pinCode;
     int sum = 0;
@@ -229,9 +229,9 @@ int main()
     }
 
     if (sum == 42)
-        std::cout << "Ввод корректный.\n";
+        std::cout << "Correct input.\n";
     else
-        std::cout << "Ввод некорректный.\n";
+        std::cout << "Incorrect input.\n";
 
     return 0;
 }
@@ -249,7 +249,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите площадь участка: ";
+    std::cout << "Enter the area of the plot: ";
     int square;
     std::cin >> square;
 
@@ -258,9 +258,9 @@ int main()
         ++count;
     
     if (count * count == square)
-        std::cout << "Площадь является точным квадратом.\n";
+        std::cout << "The area is a perfect square.\n";
     else
-        std::cout << "Площадь не является точным квадратом.\n";
+        std::cout << "The area is not a perfect square.\n";
 
     return 0;
 }
@@ -280,7 +280,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите число: ";
+    std::cout << "Enter a number: ";
     int number;
     std::cin >> number;
 
@@ -292,9 +292,9 @@ int main()
     }
 
     if (found)
-        std::cout << "Число состоит не только из 0 и 1.\n";
+        std::cout << "The number does not consist only of 0 and 1.\n";
     else
-        std::cout << "Число состоит только из 0 и 1.\n";
+        std::cout << "The number consists only of 0 and 1.\n";
     return 0;
 }
 
@@ -314,7 +314,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите число: ";
+    std::cout << "Enter a number: ";
     int number;
     std::cin >> number;
 
@@ -346,20 +346,20 @@ int main()
 
 int main()
 {
-    std::cout << "Введите, который час: ";
+    std::cout << "Enter the time: ";
     int hour;
     std::cin >> hour;
 
     while (hour <= 0 || hour > 12)
     {
-        std::cout << "Время должно быть в диапазоне от 1 до 12. Введите, который час: ";
+        std::cout << "Time must be between 1 and 12. Enter the time: ";
         std::cin >> hour;
     }
 
     int count = 0;
     while (count < hour)
     {
-        std::cout << "Ку-ку!\n";
+        std::cout << "Peek-a-boo!\n";
         ++count;
     }
 
@@ -380,7 +380,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите число: ";
+    std::cout << "Enter a number: ";
     int number;
     std::cin >> number;
     int count = 0;
@@ -394,7 +394,7 @@ int main()
     }
     else
         count = 1;
-    std::cout << "Цифр в числе: " << count << '\n';
+    std::cout << "Digits in the number: " << count << '\n';
 
     return 0;
 }
@@ -413,33 +413,33 @@ int main()
 
 int main()
 {
-    std::cout << "Введите имя: ";
+    std::cout << "Enter the name: ";
     std::string name;
     std::getline(std::cin, name);
 
-    std::cout << "Введите сумму долга: ";
+    std::cout << "Enter the amount of debt: ";
     int debt;
     std::cin >> debt;
     
     if (debt < 0)  
-        std::cout << "Сумма долга не может быть отрицательной! \n";
+        std::cout << "The amount of debt cannot be negative! \n";
     else 
     {
         while (debt > 0)
         {
-            std::cout << "Введите сумму платежа: ";
+            std::cout << "Enter the payment amount: ";
             int payment;
             std::cin >> payment;
             debt -= payment;
             if (debt > 0)
-                std::cout << "Сумма долга: " << debt << '\n';
+                std::cout << "The amount of debt: " << debt << '\n';
         }
 
-        std::cout << "Долг полностью погашен.\n";
+        std::cout << "The debt has been fully repaid.\n";
         if (debt != 0)
         {
             int balance = -debt;
-            std::cout << "Остаток на счету: " << balance << '\n';
+            std::cout << "Account balance: " << balance << '\n';
         }
     }
     return 0;
@@ -457,7 +457,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите номер билета: ";
+    std::cout << "Enter the ticket number: ";
     int ticketNumber;
     std::cin >> ticketNumber;
     
@@ -469,7 +469,7 @@ int main()
         ++digitCount;
     }
     if (digitCount % 2 != 0 || tempTicketNumber == 0)
-        std::cout << "Количество цифр в номере билета должно быть четным.";
+        std::cout << "The number of digits in the ticket number must be even.";
     else
     {
     int iterationCount = digitCount / 2;    
@@ -492,9 +492,9 @@ int main()
         ++countLeft;
     }
     if (sumRight == sumLeft)
-        std::cout << "Билет счастливый!\n";
+        std::cout << "The ticket is a lucky one!\n";
     else
-        std::cout << "Повезёт в следующий раз!!\n";
+        std::cout << "Better luck next time!\n";
     }
     return 0;
 }
@@ -510,7 +510,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите номер числа из последовательности Фибоначчи: ";
+    std::cout << "Enter the number of the number from the Fibonacci sequence: ";
     int number;
     std::cin >> number;
 
@@ -519,7 +519,7 @@ int main()
     int currentNumber = 0;
 
     if (number <= 0 || number > 46)
-        std::cout << "Число не может быть отрицательным, или равным нулю, или больше 46.";
+        std::cout << "The number cannot be negative, or equal to zero, or greater than 46.";
     else if (number == 1 || number == 2)
     {
         std::cout << number_1;
@@ -553,15 +553,15 @@ int main()
 
 int main()
 {
-    std::cout << "Введите размер вклада: ";
+    std::cout << "Enter the deposit amount: ";
     int deposit;
     std::cin >> deposit;
 
-    std::cout << "Введите процентную ставку: ";
+    std::cout << "Enter the interest rate: ";
     int rate;
     std::cin >> rate;
 
-    std::cout << "Введите желаемую сумму: ";
+    std::cout << "Enter the desired amount: ";
     int desiredAmount;
     std::cin >> desiredAmount;
 
@@ -573,7 +573,7 @@ int main()
         ++yearsCount;
     }
 
-    std::cout << "Придётся подождать: " << yearsCount << " лет\n";
+    std::cout << "You'll have to wait: " << yearsCount << " years\n";
 
     return 0;
 }

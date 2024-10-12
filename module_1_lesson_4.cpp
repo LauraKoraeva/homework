@@ -13,12 +13,12 @@ int main()
   double itemCost3;
   double discount = 0.0;
   double discountAmount = 0.0;
-  std::cout << "Давайте вычислим сумму чека.\n";
-  std::cout << "Введите стоимость первого товара: ";
+  std::cout << "Let's calculate the check amount.\n";
+  std::cout << "Enter the cost of the first item: ";
   std::cin >> itemCost1;
-  std::cout << "Введите стоимость второго товара: ";
+  std::cout << "Enter the cost of the second item: ";
   std::cin >> itemCost2;
-  std::cout << "Введите стоимость третьего товара: ";
+  std::cout << "Enter the cost of the third item: ";
   std::cin >> itemCost3;
 
   double totalCost = itemCost1 + itemCost2 + itemCost3;
@@ -26,13 +26,13 @@ int main()
   if (totalCost > 10000)
   {
     discount = 10.0;
-    std::cout << "\nТак как сумма вашего чека превышает 10 000 руб, вам сделана скидка 10%.\n";
+    std::cout << "\nSince your check amount exceeds 10,000 rubles, you are given a 10% discount..\n";
     discountAmount = discount / 100 * totalCost;
-    std::cout << "Скидка: " << discountAmount << '\n';
+    std::cout << "Discount: " << discountAmount << '\n';
   }
 
   double finalPrice = totalCost - discountAmount;
-  std::cout << "\nИтого к оплате: " << finalPrice << '\n';
+  std::cout << "\nTotal amount to be paid: " << finalPrice << '\n';
 
   return 0;
 }
@@ -53,7 +53,7 @@ int main()
 int main()
 {
   int speedKmph;
-  std::cout << "Введите скорость движения автомобиля: ";
+  std::cout << "Enter the vehicle speed: ";
   std::cin >> speedKmph;
 
   int targetDistanceKm = 200;
@@ -62,13 +62,13 @@ int main()
 
   if (travelledDistanceKm >= targetDistanceKm)
   {
-    std::cout << "Вы приехали!" << '\n';
-    std::cout << "Добро пожаловать в Рязань!" << '\n';
+    std::cout << "You have arrived!" << '\n';
+    std::cout << "Welcome to Ryazan!" << '\n';
   }
   else
   {
     int distanceLeftKm = targetDistanceKm - travelledDistanceKm;
-    std::cout << "До рязани " << distanceLeftKm << " км." << '\n';
+    std::cout << distanceLeftKm << " km to Ryazan.\n";
   }
 
   return 0;
@@ -90,14 +90,14 @@ int main()
 int main()
 {
   int x;
-  std::cout << "Введите число: ";
+  std::cout << "Enter a number: ";
   std::cin >> x;
 
   if (x < 0)
   {
     x = -x;
   }
-  std::cout << "Модуль числа равен: " << x << '\n';
+  std::cout << "The modulus of the number is: " << x << '\n';
 
   return 0;
 }
@@ -117,11 +117,11 @@ int main()
 
 int main()
 {
-  std::cout << "Давай узнаем, достаточно ли у вас барберов в городе.\n";
-  std::cout << "Сколько мужчин проживает в городе? ";
+  std::cout << "Let's find out if you have enough barbers in your city.\n";
+  std::cout << "How many men live in the city? ";
   int men;
   std::cin >> men;
-  std::cout << "Сколько барберов уже работает в городе? ";
+  std::cout << "How many barbers are already working in the city? ";
   int barbers;
   std::cin >> barbers;
   
@@ -138,16 +138,16 @@ int main()
     barbersRequired = men / (term * cutsPerBarber) + 1;
   }
 
-  std::cout << "Необходимое число барберов: " << barbersRequired << '\n';
+  std::cout << "Number of barbers required: " << barbersRequired << '\n';
   
   if (barbers < barbersRequired)
   {
-    std::cout << "Барберов недостаточно!" << '\n';
-    std::cout << "Необходимо нанять ещё " << barbersRequired - barbers << ".\n";
+    std::cout << "There are not enough barbers!" << '\n';
+    std::cout << "You need to hire " << barbersRequired - barbers << " barbers.\n";
   }
   else
   {
-    std::cout << "Барберов достаточно!" << '\n';
+    std::cout << "There are enough barbers!" << '\n';
   }
 
   return 0;
@@ -170,26 +170,26 @@ int main()
 
 int main()
 {
-  std::cout << "Сравним два числа.\n";
-  std::cout << "Введите первое число: ";
+  std::cout << "Let's compare two numbers.\n";
+  std::cout << "Enter the first number: ";
   int number1;
   std::cin >> number1;
 
-  std::cout << "Введите второе число: ";
+  std::cout << "Enter the second number: ";
   int number2;
   std::cin >> number2;
 
   if (number1 < number2)
   {
-    std::cout << "Наименьшее число: " << number1 << "\n";
+    std::cout << "The smallest number: " << number1 << "\n";
   }
   else if (number2 < number1)
   {
-    std::cout << "Наименьшее число: " << number2 << "\n";
+    std::cout << "The smallest number: " << number2 << "\n";
   }
   else
   {
-    std::cout << "Числа равны!\n";
+    std::cout << "The numbers are equal!\n";
   }
 
   return 0;
@@ -210,25 +210,25 @@ int main()
 
 int main()
 {
-  std::cout << "Ты умеешь складывать числа в уме? Проверь себя!\n";
-  std::cout << "Введи первое число: ";
+  std::cout << "Can you add numbers in your mind? Test yourself!\n";
+  std::cout << "Enter the first number: ";
   int number1;
   std::cin >> number1;
-  std::cout << "Введи второе число: ";
+  std::cout << "Enter the second number: ";
   int number2;
   std::cin >> number2;
-  std::cout << "Введи их сумму: ";
+  std::cout << "Enter the sum: ";
   int sum;
   std::cin >> sum;
-  std::cout << "-----Проверяем-----\n";
+  std::cout << "-----Checking-----\n";
   int correctAnswer = number1 + number2;
   if (sum == correctAnswer)
   {
-    std::cout << "Верно!\n";
+    std::cout << "Correct!\n";
   }
   else
   {
-    std::cout << "Ошибка! Верный результат: " << correctAnswer << "\n";
+    std::cout << "Error! Correct answer: " << correctAnswer << "\n";
   }
 
   return 0;
@@ -249,19 +249,19 @@ int main()
 
 int main()
 {
-  std::cout << "Узнайте, чётное или нечётное число?\n";
-  std::cout << "Введите число: ";
+  std::cout << "Find out if a number is even or odd?\n";
+  std::cout << "Enter a number: ";
   int number;
   std::cin >> number;
   int remainder = number % 2;
-  std::cout << "-----Проверяем-----\n";
+  std::cout << "-----Checking-----\n";
   if (remainder == 0)
   {
-    std::cout << "Число " << number << " - чётное";
+    std::cout << "Number " << number << " is even";
   }
   else
   {
-    std::cout << "Число " << number << " - нечётное";
+    std::cout << "Number " << number << " is odd";
   }
 
   return 0;
@@ -283,12 +283,12 @@ int main()
 
 int main()
 {
-  std::cout << "Узнайте уровень персонажа в игре!\n";
+  std::cout << "Find out the character level in the game!\n";
   int playerLevel = 1;
   int experiencePoints;
-  std::cout << "Введите число очков опыта: ";
+  std::cout << "Enter the number of experience points: ";
   std::cin >> experiencePoints;
-  std::cout << "-----Считаем-----\n";
+  std::cout << "-----Calculating-----\n";
   assert(experiencePoints >= 0);
   if (experiencePoints < 1000)
   {
@@ -305,7 +305,7 @@ int main()
   {
     playerLevel = 4;
   }
-  std::cout << "Ваш уровень: " << playerLevel << '\n';
+  std::cout << "Your level: " << playerLevel << '\n';
 
   return 0;
 }
@@ -326,23 +326,23 @@ int main()
 
 int main()
 {
-  std::cout << "Узнайте, делится ли одно число на другое без остатка.\n";
-  std::cout << "Введите первое число: ";
+  std::cout << "Find out if one number is divisible by another without a remainder.\n";
+  std::cout << "Enter the first number: ";
   int dividend;
   std::cin >> dividend;
-  std::cout << "Введите второе число: ";
+  std::cout << "Enter the second number: ";
   int divisor;
   std::cin >> divisor;
   assert(divisor != 0);
-  std::cout << "-----Проверяем-----\n";
+  std::cout << "-----Checking-----\n";
   int remainder = dividend % divisor;
   if (remainder == 0)
   {
-    std::cout << "Да, " << dividend << " делится на " << divisor << " без остатка!\n";
+    std::cout << "Yes, " << dividend << " is divisible by " << divisor << " without a remainder!\n";
   }
   else
   {
-    std::cout << "Нет, " << dividend << " не делится на " << divisor << " без остатка!\n";
+    std::cout << "No, " << dividend << " is not divisible by " << divisor << " without a remainder!\n";
   }
 
   return 0;
@@ -364,11 +364,11 @@ int main()
 
 int main()
 {
-  std::cout << "Давай узнаем, достаточно ли у вас барберов в городе.\n";
-  std::cout << "Сколько мужчин проживает в городе? ";
+  std::cout << "Let's find out if you have enough barbers in your city.\n";
+  std::cout << "How many men live in the city? ";
   int men;
   std::cin >> men;
-  std::cout << "Сколько барберов уже работает в городе? ";
+  std::cout << "How many barbers are already working in the city? ";
   int barbers;
   std::cin >> barbers;
   
@@ -385,16 +385,16 @@ int main()
     barbersRequired = men / (term * cutsPerBarber) + 1;
   }
 
-  std::cout << "Необходимое число барберов: " << barbersRequired << '\n';
+  std::cout << "Number of barbers required: " << barbersRequired << '\n';
   
   if (barbers < barbersRequired)
   {
-    std::cout << "Барберов недостаточно!" << '\n';
-    std::cout << "Необходимо нанять ещё " << barbersRequired - barbers << ".\n";
+    std::cout << "There are not enough barbers!" << '\n';
+    std::cout << "You need to hire " << barbersRequired - barbers << " barbers.\n";
   }
   else
   {
-    std::cout << "Барберов достаточно!" << '\n';
+    std::cout << "There are enough barbers!" << '\n';
   }
 
   return 0;
@@ -416,80 +416,80 @@ int main()
 
 int main()
 {
-  std::cout << "*****Бизнес-ланч*****\n";
-  std::cout << "Узнайте меню на сегодня!\n";
-  std::cout << "Введите день недели (от 1 до 7): ";
+  std::cout << "*****Business-lunch*****\n";
+  std::cout << "See the menu for today!\n";
+  std::cout << "Enter the day of the week (from 1 to 7): ";
   int day;
   std::cin >> day;
   
-  std::string drink = "Напиток (чай, кофе, морс)";
+  std::string drink = "Drink (tea, coffee, mors)";
   
-  std::string firstDish1 = "Куриный суп лапша";
-  std::string mainDish1 = "Котлеты из индейки с овощами";
+  std::string firstDish1 = "Chicken noodle soup";
+  std::string mainDish1 = "Turkey meatballs with vegetables";
 
-  std::string firstDish2 = "Рыбная солянка";
-  std::string mainDish2 = "Судак в сметанном соусе с пюре";
+  std::string firstDish2 = "Fish solyanka";
+  std::string mainDish2 = "Pike perch in sour cream sauce with mashed potatoes";
 
-  std::string firstDish3 = "Щи из молодой капусты с говядиной";
-  std::string mainDish3 = "Гуляш из говядины и гречка с луком";
+  std::string firstDish3 = "Cabbage soup with beef";
+  std::string mainDish3 = "Beef goulash and buckwheat with onions";
 
-  std::string firstDish4 = "Уха волжская";
-  std::string mainDish4 = "Филе окуня с булгуром и кабачками";
+  std::string firstDish4 = "The Volga ukha";
+  std::string mainDish4 = "Perch fillet with bulgur and zucchini";
 
-  std::string firstDish5 = "Минестроне с куриными фрикадельками";
-  std::string mainDish5 = "Шашлык из курицы с рисом и соусом белое вино";
+  std::string firstDish5 = "Minestrone with chicken meatballs";
+  std::string mainDish5 = "Chicken kebab with rice and white wine sauce";
 
-  std::string firstDish6 = "Том ям с рисом";
-  std::string mainDish6 = "Крабовые котлеты с пюре из картофеля";
+  std::string firstDish6 = "Tom yam with rice";
+  std::string mainDish6 = "Crab patties with mashed potatoes";
 
-  std::string firstDish7 = "Щавелевый суп с курицей и яйцом";
-  std::string mainDish7 = "Голубцы из говядины со сметаной";
+  std::string firstDish7 = "Sorrel soup with chicken and egg";
+  std::string mainDish7 = "Beef cabbage roll with sour cream";
 
   if (day == 1)
   {
-    std::cout << "Меню сегодня (понедельник):\n";
+    std::cout << "Today's menu (Monday):\n";
     std::cout << firstDish1 << '\n';
     std::cout << mainDish1 << '\n';
   }
 
   if (day == 2)
     {
-      std::cout << "Меню сегодня (вторник):\n";
+      std::cout << "Today's menu (Tuesday):\n";
       std::cout << firstDish2 << '\n';
       std::cout << mainDish2 << '\n';
     }
 
   if (day == 3)
     {
-      std::cout << "Меню сегодня (среда):\n";
+      std::cout << "Today's menu (Wednesday):\n";
       std::cout << firstDish3 << '\n';
       std::cout << mainDish3 << '\n';
     }
 
   if (day == 4)
     {
-      std::cout << "Меню сегодня (четверг):\n";
+      std::cout << "Today's menu (Thursday):\n";
       std::cout << firstDish4 << '\n';
       std::cout << mainDish4 << '\n';
     }
 
   if (day == 5)
     {
-      std::cout << "Меню сегодня (пятница):\n";
+      std::cout << "Today's menu (Friday):\n";
       std::cout << firstDish5 << '\n';
       std::cout << mainDish5 << '\n';
     }
 
   if (day == 6)
     {
-      std::cout << "Меню сегодня (суббота):\n";
+      std::cout << "Today's menu (Saturday):\n";
       std::cout << firstDish6 << '\n';
       std::cout << mainDish6 << '\n';
     }
 
   if (day == 7)
     {
-      std::cout << "Меню сегодня (воскресенье):\n";
+      std::cout << "Today's menu (Sunday):\n";
       std::cout << firstDish7 << '\n';
       std::cout << mainDish7 << '\n';
     }

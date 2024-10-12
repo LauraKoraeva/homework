@@ -4,16 +4,16 @@
 
 int main()
 {
-    std::cout << "Введите цену товара за 100 грамм: ";
+    std::cout << "Enter the price of the product per 100 grams: ";
     float fixedPrice;
     std::cin >> fixedPrice;
 
-    std::cout << "Введите вес покупки: ";
+    std::cout << "Enter the purchase weight: ";
     float productAmount;
     std::cin >> productAmount;
 
     float finalCost = fixedPrice / 100 * productAmount;
-    std::cout << "Стоимость покупки: " << finalCost;
+    std::cout << "Purchase price: " << finalCost;
 
 
     return 0;
@@ -33,15 +33,15 @@ int main()
 
 int main()
 {
-    std::cout << "Введите количество белков на 100 грамм продукта: ";
+    std::cout << "Enter the amount of protein per 100 grams of product: ";
     float protein;
     std::cin >> protein;
 
-    std::cout << "Введите количество углеводов на 100 грамм продукта: ";
+    std::cout << "Enter the amount of carbohydrates per 100 grams of product: ";
     float carbs;
     std::cin >> carbs;
 
-    std::cout << "Введите массу нетто продукта: ";
+    std::cout << "Enter the net weight of the product: ";
     float netWeight;
     std::cin >> netWeight;
 
@@ -50,9 +50,9 @@ int main()
 
     std::cout << '\n';
 
-    std::cout << "При неттовом весе " << netWeight << " г продукта, употребляется:\n";
-    std::cout << "Белков\t\t" << proteinPerServing << " г.\n";
-    std::cout << "Углеводов\t" << carbsPerServing << " г.\n";
+    std::cout << "With a net weight of " << netWeight << " g of the product, it is consumed:\n";
+    std::cout << "Protein\t\t" << proteinPerServing << " g.\n";
+    std::cout << "Carbohydrates\t" << carbsPerServing << " g.\n";
     
     return 0;
 }
@@ -72,15 +72,15 @@ int main()
 
 int main()
 {
-    std::cout << "Введите цену товара за 100 грамм: ";
+    std::cout << "Enter the price of the product per 100 grams: ";
     float fixedPrice;
     std::cin >> fixedPrice;
 
-    std::cout << "Введите вес покупки: ";
+    std::cout << "Enter the purchase weight: ";
     float productAmount;
     std::cin >> productAmount;
 
-    std::cout << "Введите размер скидки: ";
+    std::cout << "Enter the discount amount: ";
     int discount;
     std::cin >> discount;
 
@@ -95,7 +95,7 @@ int main()
         finalCost = productCost - productCost * discount / 100;
     }
 
-    std::cout << "Стоимость покупки: " << finalCost;
+    std::cout << "Purchase price: " << finalCost;
 
     return 0;
 }
@@ -189,20 +189,20 @@ int main()
 int main()
 {
     float lowTemp;
-    std::cout << "Нижняя граница: ";
+    std::cout << "Low temperature limit: ";
     std::cin >> lowTemp;
 
     float highTemp;
     do 
     {
-        std::cout << "Верхняя граница: ";
+        std::cout << "High temperature limit: ";
         std::cin >> highTemp;
         if (highTemp <= lowTemp)
-            std::cout << "Верхняя граница не может быть меньше нижней границы или равной ей.\n";
+            std::cout << "The high temperature limit cannot be less than or equal to the low temperature limit.\n";
     } while (highTemp <= lowTemp);
 
     float increment;
-    std::cout << "Шаг: ";
+    std::cout << "Increment: ";
     std::cin >> increment;
 
     std::cout << "C\tF\n";

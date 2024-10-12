@@ -4,18 +4,18 @@
 
 int main()
 {
-    std::cout << "Введите, который час: ";
+    std::cout << "Enter the time: ";
     int hour;
     std::cin >> hour;
 
     for (; hour <= 0 || hour > 12; )
     {
-        std::cout << "Время должно быть в диапазоне от 1 до 12. Введите, который час: ";
+        std::cout << "Time must be between 1 and 12. Enter the time: ";
         std::cin >> hour;
     }
 
     for (int count = 0; count < hour; ++count)
-        std::cout << "Ку-ку!\n";
+        std::cout << "Peek-a-boo!\n";
 
     return 0;
 }
@@ -34,20 +34,20 @@ int main()
 
 int main()
 {
-    std::cout << "Сколько чисел вы хотите сложить: ";
+    std::cout << "How many numbers do you want to add up: ";
     int numbersCount;
     std::cin >> numbersCount;
     
     int sum = 0;
     for (int inputCounts = 1; inputCounts <= numbersCount; ++inputCounts)
     {
-        std::cout << "Введите число " << inputCounts << ": ";
+        std::cout << "Enter number " << inputCounts << ": ";
         int number;
         std::cin >> number;
         sum += number;
     }
 
-    std::cout << "Сумма введенных чисел: " << sum << '\n';
+    std::cout << "The sum of the entered numbers: " << sum << '\n';
 
     return 0;
 }
@@ -66,7 +66,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите число: ";
+    std::cout << "Enter a number: ";
     int number;
     std::cin >> number;
 
@@ -93,7 +93,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите число: ";
+    std::cout << "Enter a number: ";
     int number;
     std::cin >> number;
 
@@ -104,7 +104,7 @@ int main()
         sum += count;
     }
 
-    std::cout << "Сумма нечётных чисел в диапазоне от 1 до " << number << ": " << sum << '\n';
+    std::cout << "The sum of odd numbers in the range from 1 to " << number << ": " << sum << '\n';
 
     return 0;
 }
@@ -128,14 +128,14 @@ int main()
     std::string answer;
     int count = 0;
 
-    for (; answer != "Да, конечно, сделал"; )
+    for (; answer != "Yes, of course I have"; )
     {
-        std::cout << "Ты сделал задание? ";
+        std::cout << "Have you completed the task?";
         std::getline(std::cin, answer);
         ++count;
     }
 
-    std::cout << "Ну почему тебя нужно спрашивать " << count << " раз?";
+    std::cout << "Why do I have to ask " << count << " times?";
 
     return 0;
 }
@@ -159,7 +159,7 @@ int main()
     bool result = false;
     for (; !result; )
     {
-        std::cout << "Введите пароль: ";
+        std::cout << "Enter the password: ";
         int password;
         std::cin >> password;
 
@@ -172,9 +172,9 @@ int main()
         if (sum == 42)
             result = true;           
         else
-            std::cout << "Пароль неправильный.\n";
+            std::cout << "The password is incorrect.\n";
     }
-    std::cout << "Пароль правильный.";
+    std::cout << "The password is correct.";
 
     return 0;
 }
@@ -193,7 +193,7 @@ int main()
 
 int main()
 {
-    std::cout << "Введите площадь участка: ";
+    std::cout << "Enter the area of the plot: ";
     int square;
     std::cin >> square;
 
@@ -204,9 +204,9 @@ int main()
     }
 
     if (count * count == square)
-        std::cout << "Площадь является точным квадратом.\n";
+        std::cout << "The area is a perfect square.\n";
     else
-        std::cout << "Площадь не является точным квадратом.\n";
+        std::cout << "The area is not a perfect square.\n";
 
     return 0;
 }
@@ -389,7 +389,7 @@ int main()
 
     while(true)
     {
-        std::cout << "Марсоход находится на позиции " << currentX << ", " << currentY << ", введите команду:\n";
+        std::cout << "The rover is in position " << currentX << ", " << currentY << ", enter the command:\n";
         std::string way;
         std::cin >> way;
 
@@ -426,7 +426,7 @@ int main()
         }
 
         else
-            std::cout << "Ошибка ввода. Повторите направление.\n";
+            std::cout << "Input error. Repeat the direction.\n";
 
 
     }
@@ -526,7 +526,7 @@ int main()
 
 int main() 
 {
-	std::cout << "Введите общую длину колонтитула: ";
+	std::cout << "Enter the total length of the header: ";
 	int symbolCount;
 	std::cin >> symbolCount;
 
@@ -534,12 +534,12 @@ int main()
 	bool correctNumber = false;
 	do
 	{
-		std::cout << "Введите количество восклицательных знаков: ";
+		std::cout << "Enter the number of exclamation marks: ";
 		
 		std::cin >> exclamationCount;
 		
 		if (exclamationCount > symbolCount - 2)
-			std::cout << "Количество восклицательных знаков должно быть меньше длины колонтитула как минимум на два знака.";
+			std::cout << "The number of exclamation marks must be at least two characters less than the length of the header.";
 		else
 			correctNumber = true;
 	} while (!correctNumber);

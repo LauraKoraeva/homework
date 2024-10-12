@@ -12,29 +12,29 @@
 int main()
 {
   int x, y;
-  std::cout << "Введите координаты X и Y: ";
+  std::cout << "Enter the X and Y coordinates: ";
   std::cin >> x >> y;
 
   if (x > 0)
   {
     if (y > 0)
-      std::cout << "Точка находится в первой четверти";
+      std::cout << "The point is in the first quadrant";
     else if (y < 0)
-      std::cout << "Точка находится в четвертой четверти";
+      std::cout << "The point is in the fourth quadrant";
     if (y == 0)
-      std::cout << "Точка находится на оси X";
+      std::cout << "The point is on the X axis";
   }
   else if (x < 0)
   {
     if (y > 0)
-      std::cout << "Точка находится во второй четверти";
+      std::cout << "The point is in the second quadrant";
     else if (y < 0)
-      std::cout << "Точка находится в третьей четверти";
+      std::cout << "The point is in the third quadrant";
     else if (y == 0)
-      std::cout << "Точка находится на оси X";
+      std::cout << "The point is on the X axis";
   }
   else if (x == 0)
-    std::cout << "Точка находится на оси Y";
+    std::cout << "The point is on the Y axis";
   
   return 0;
 }
@@ -54,18 +54,18 @@ int main()
 
 int main()
 {
-  std::cout << "Введите сумму для снятия: ";
+  std::cout << "Enter the amount to withdraw: ";
   int sum;
   std::cin >> sum;
   if (sum < 100000)
   {
     if (sum % 100 == 0)
-      std::cout << "Сумма допустима для снятия.";
+      std::cout << "The amount is available for withdrawal.";
     else
-      std::cout << "Сумма не допустима для снятия.";
+      std::cout << "The amount is not available for withdrawal.";
   }
   else
-    std::cout << "Сумма не допустима для снятия.";
+    std::cout << "The amount is not available for withdrawal.";
   
   return 0;
 }
@@ -88,12 +88,12 @@ int main()
 
 int main()
 {
-  std::cout << "Узнайте уровень персонажа в игре!\n";
+  std::cout << "Find out the character level in the game!\n";
   int playerLevel = 1;
   int experiencePoints;
-  std::cout << "Введите число очков опыта: ";
+  std::cout << "Enter the number of experience points: ";
   std::cin >> experiencePoints;
-  std::cout << "-----Считаем-----\n";
+  std::cout << "-----Calculating-----\n";
   assert(experiencePoints >= 0);
   if (experiencePoints < 1000)
   {
@@ -110,7 +110,7 @@ int main()
   {
     playerLevel = 4;
   }
-  std::cout << "Ваш уровень: " << playerLevel << '\n';
+  std::cout << "Your level: " << playerLevel << '\n';
 
   return 0;
 }
@@ -131,21 +131,21 @@ int main()
 int main()
 {
   int car1, car2, car3, car4;
-  std::cout << "Введите массу первой машины: ";
+  std::cout << "Enter the mass of the first car: ";
   std::cin >> car1;
-  std::cout << "Введите массу второй машины: ";
+  std::cout << "Enter the mass of the second car: ";
   std::cin >> car2;
-  std::cout << "Введите массу третьей машины: ";
+  std::cout << "Enter the mass of the third car: ";
   std::cin >> car3;
-  std::cout << "Введите массу четвертой машины: ";
+  std::cout << "Enter the mass of the fourth car: ";
   std::cin >> car4;
 
   int maxWeight = 1200;
 
   if (car1 > maxWeight || car2 > maxWeight || car3 > maxWeight || car4 > maxWeight)
-    std::cout << "Масса одной из машин превышает 1200 кг.\n";
+    std::cout << "The mass of one of the cars exceeds 1200 kg.\n";
   else
-    std::cout << "Масса всех машин меньше 1200 кг.\n";
+    std::cout << "The mass of all the cars is less than 1200 kg.\n";
   
   return 0;
 }
@@ -166,14 +166,14 @@ int main()
 
 int main()
 {
-  std::cout << "Введите длины трех сторон треугольника: ";
+  std::cout << "Enter the lengths of the three sides of the triangle: ";
   int a, b, c;
   std::cin >> a >> b >> c;
 
   if (a + b <= c || a + c <= b || b + c <= a)
-    std::cout << "Треугольник не получится.";
+    std::cout << "Triangle is not possible.";
   else
-    std::cout << "Треугольник получится.";
+    std::cout << "Triangle is possible.";
   
   return 0;
 }
@@ -202,23 +202,23 @@ int main()
   int flightHours;
   std::string eyeColour;
 
-  std::cout << "Введите рост: ";
+  std::cout << "Enter height: ";
   std::cin >> height;
-  std::cout << "Введите вес: ";
+  std::cout << "Enter weight: ";
   std::cin >> weight;
-  std::cout << "Введите количество рук: ";
+  std::cout << "Enter the number of hands: ";
   std::cin >> hands;
-  std::cout << "Введите количество ног: ";
+  std::cout << "Enter the number of legs: ";
   std::cin >> legs;
-  std::cout << "Введите количество часов налета: ";
+  std::cout << "Enter the number of flight hours: ";
   std::cin >> flightHours;
-  std::cout << "Введите цвет глаз: ";
+  std::cout << "Enter the eye color: ";
   std::cin >> eyeColour;
 
   if ((height >= 145 && height < 165) && (weight >= 45 && weight < 65) && (legs == hands) && (flightHours > 100) && (eyeColour != "green"))
-    std::cout << "Годен!" << '\n';
+    std::cout << "Fit for the army!" << '\n';
   else
-    std::cout << "Не годен!" << '\n';
+    std::cout << "Not fit for the army!" << '\n';
 
   return 0;
 }
@@ -240,18 +240,18 @@ int main()
   int length;
   int width;
   int height;
-  std::cout << "Введите размеры кирпича: \n";
+  std::cout << "Enter the brick dimensions: \n";
   std::cin >> length >> width >> height;
 
   int x;
   int y;
-  std::cout << "Введите размеры отверстия: \n";
+  std::cout << "Enter the hole dimensions: \n";
   std::cin >> x >> y;
 
   if ((length <= x && width <= y || length <= y && width <= x) || (length <= x && height <= y || length <= y && height <= x) || (width <= x && height <= y || width <= y && height <= x))
-    std::cout << "Ура!Можно дарить Иа!";
+    std::cout << "Hooray!You can give the brick to Eeyore!";
   else
-    std::cout << "Нет, не получится подарить Иа!";
+    std::cout << "Nope, you can't give this brick to Eeyore!";
     
 
   return 0;
@@ -276,15 +276,15 @@ int main()
   int speed;
   int altitude;
   
-  std::cout << "Введите скорость самолёта: ";
+  std::cout << "Enter the speed of the aircraft: ";
   std::cin >> speed;
-  std::cout << "Введите высоту полёта самолёта: ";
+  std::cout << "Enter the aircraft's flight altitude: ";
   std::cin >> altitude;
 
   if (speed >= 750 && speed <= 850 && altitude >= 9000 && altitude <= 9500)
-    std::cout << "Самолёт летит правильным эшелоном";
+    std::cout << "The plane is flying at the correct flight level.";
   else
-    std::cout << "Самолёт летит неправильным эшелоном";
+    std::cout << "The plane is flying at the wrong flight level";
     
   return 0;
 }
