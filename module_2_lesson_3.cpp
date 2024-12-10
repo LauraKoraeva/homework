@@ -271,3 +271,263 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Массивы и Указатели в C++
+Урок 3. Двумерные массивы и алгоритмы над ними*/
+
+//Задание 2. Крестики-нолики
+
+#include <iostream>
+#include <limits>
+#include <numeric>
+
+bool correctInput(int input)
+{
+	if (std::cin.fail() || std::cin.peek() != '\n' || input < 0 || input >= 3)
+	{
+		std::cout << "Coordinates are wrong. Try again!\n";
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+		return false;
+	}
+	else
+		return true;
+}
+
+
+
+
+/*bool checkColumns(char grid[3][3], char symbol)
+{
+	bool hasWinner = true;
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			if (grid[i][j] != symbol)
+			{
+				hasWinner = false;
+				break;
+			}
+		}
+		if (hasWinner)
+			return true;
+	}
+	return false;
+}
+
+
+
+bool checkRows(char grid[3][3], char symbol)
+{
+	bool hasWinner = true;
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			if (grid[j][i] != symbol)
+			{
+				hasWinner = false;
+				break;
+			}
+		}
+		if (hasWinner)
+			return true;
+	}
+	return false;
+}
+
+bool hasWinner(char grid[3][3], char symbol)
+{
+	return checkColumns(grid, symbol) || checkRows(grid, symbol);
+}
+
+*/
+
+
+
+bool hasWinner(char grid[3][3], char symbol)
+{
+	bool hasWinner = true;
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			if (grid[i][j] != symbol)
+			{
+				hasWinner = false;
+				break;
+			}
+			if (i == 0)
+			{
+				for (int k = 0; k < 3; ++k)
+				{
+					if (grid[k][j] != symbol)
+					{
+						hasWinner = false;
+						break;
+					}
+				}
+				if (hasWinner)
+					return true;
+			}
+		
+
+
+		}
+		if (hasWinner)
+			return true;
+	}
+	return false;
+}
+
+
+
+void printGrid(char grid[3][3])
+{
+	std::cout << "***************\n";
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			std::cout << grid[i][j];
+		}
+		std::cout << '\n';
+	}
+	std::cout << "***************\n";
+}
+
+void makeMove(std::string name, char symbol, char grid[3][3], bool moves[3][3])
+{
+	int i, j;
+	do
+	{
+		std::cout << name << ", enter coordinates : \n";
+
+		do
+		{
+			std::cout << "y - ";
+			std::cin >> i;
+		} while (!correctInput(i));
+
+		do
+		{
+			std::cout << "x - ";
+			std::cin >> j;
+		} while (!correctInput(j));
+
+		if (moves[i][j])
+			std::cout << "Coordinates are taken. Try again!\n";
+	} while (moves[i][j] == true);
+
+	moves[i][j] = true;
+	grid[i][j] = symbol;
+}
+
+int main()
+{
+	char grid[3][3] = { { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
+	bool moves[3][3] = { false };
+
+	std::string playerOne = "Player 1";
+	std::string playerTwo = "Player 2";
+	char symbolX = 'X';
+	char symbolO = 'O';
+
+	bool isDraw = true;
+
+	int movesCount = 9;
+	int count = 0;
+	while (count < movesCount)
+	{
+		if (count % 2 == 0)
+		{
+			makeMove(playerOne, symbolX, grid, moves);
+			printGrid(grid);
+			if (hasWinner(grid, symbolX))
+			{
+				std::cout << playerOne << " has won! Congratulations!\n";
+				isDraw = false;
+				break;
+			}
+		}
+		else
+		{
+			makeMove(playerTwo, symbolO, grid, moves);
+			printGrid(grid);
+			if (hasWinner(grid, symbolO))
+			{
+				std::cout << playerTwo << " has won! Congratulations!\n";
+				isDraw = false;
+				break;
+			}
+		}
+
+		++count;
+	}
+	if (isDraw)
+		std::cout << "It's a draw!\n";
+
+	return 0;
+}
+
+
+
+
+
+
+
