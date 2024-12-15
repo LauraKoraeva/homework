@@ -179,6 +179,8 @@ int main()
 
 	bool isDraw = true;
 
+	printGrid(grid);
+
 	int movesCount = 9;
 	int count = 0;
 	while (count < movesCount)
@@ -213,3 +215,14 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
