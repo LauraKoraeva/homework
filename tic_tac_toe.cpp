@@ -48,87 +48,93 @@ void makeMove(std::string name, char symbol, char(*grid)[3], bool(*moves)[3])
 	grid[i][j] = symbol;
 }
 
+bool checkDiagonal(const char(*grid)[3], char symbol)
+{
+	bool hasWinner = false;
+	int count_1 = 0;
+	int count_2 = 0;
+
+	int i_1 = 0;
+	int j_1 = 0;
+	while (i_1 != 3)
+	{
+		if (grid[i_1][j_1] == symbol)
+			++count_1;
+
+		if (count_1 == 3)
+		{
+			hasWinner = true;
+			return hasWinner;
+		}
+		++i_1;
+		++j_1;
+	}
+
+	int i_2 = 0;
+	int j_2 = 2;
+	while (i_2 != 3)
+	{
+		if (grid[i_2][j_2] == symbol)
+			++count_2;
+
+		if (count_2 == 3)
+		{
+			hasWinner = true;
+			return hasWinner;
+		}
+		++i_2;
+		--j_2;
+	}
+
+	return hasWinner;
+}
+
 bool hasWinner(const char(*grid)[3], char symbol)
 {
 	bool hasWinner = false;
-	int countH = 0;
-	int countV = 0;
+	int count_H = 0;
+	int count_V = 0;
+
+	if (checkDiagonal(grid, symbol))
+	{
+		hasWinner = true;
+		return hasWinner;
+	}
 
 	for (int i = 0; i < 3; ++i)
 	{
 		for (int j = 0; j < 3; ++j)
 		{
 			if (grid[i][j] == symbol)
-				++countH;
+				++count_H;
 
 			if (i == 0)
 			{
 				for (int k = 0; k < 3; ++k)
 				{
 					if (grid[k][j] == symbol)
-						++countV;
+						++count_V;
 				}
 
-				if (countV == 3)
+				if (count_V == 3)
 				{
 					hasWinner = true;
 					return hasWinner;
 				}
 				else
-					countV = 0;
+					count_V = 0;
 			}
 		}
-		if (countH == 3)
+		if (count_H == 3)
 		{
 			hasWinner = true;
 			return hasWinner;
 		}
 		else
-			countH = 0;
+			count_H = 0;
 	}
 
 	return hasWinner;
-}
-
-bool hasWinnerD(const char(*grid)[3], char symbol)
-{
-	bool hasWinnerD = false;
-	int count1 = 0;
-	int count2 = 0;
-
-	int i1 = 0;
-	int j1 = 0;
-	while (i1 != 3)
-	{
-		if (grid[i1][j1] == symbol)
-			++count1;
-
-		if (count1 == 3)
-		{
-			hasWinnerD = true;
-			return hasWinnerD;
-		}
-		++i1;
-		++j1;
-	}
-
-	int i2 = 0;
-	int j2 = 2;
-	while (i2 != 3)
-	{
-		if (grid[i2][j2] == symbol)
-			++count2;
-
-		if (count2 == 3)
-		{
-			hasWinnerD = true;
-			return hasWinnerD;
-		}
-		++i2;
-		--j2;
-	}
-
-	return hasWinnerD;
 }
 
 void printGrid(const char(*grid)[3])
@@ -189,7 +195,7 @@ int main()
 		{
 			makeMove(playerOne, symbolX, grid, moves);
 			printGrid(grid);
-			if (hasWinner(grid, symbolX) || hasWinnerD(grid, symbolX))
+			if (hasWinner(grid, symbolX))
 			{
 				std::cout << playerOne << ", you have won! Congratulations!\n";
 				isDraw = false;
@@ -200,7 +206,7 @@ int main()
 		{
 			makeMove(playerTwo, symbolO, grid, moves);
 			printGrid(grid);
-			if (hasWinner(grid, symbolO) || hasWinnerD(grid, symbolO))
+			if (hasWinner(grid, symbolO))
 			{
 				std::cout << playerTwo << ", you have won! Congratulations!\n";
 				isDraw = false;
@@ -215,7 +221,6 @@ int main()
 
 	return 0;
 }
-
 
 
 
